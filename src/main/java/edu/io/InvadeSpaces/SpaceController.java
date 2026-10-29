@@ -11,7 +11,7 @@ public class SpaceController {
         this.spaceService = spaceService;
     }
     
-    @GetMapping
+    @GetMapping("/findall")
     public String getAll() {
         return spaceService.findAll().toString();
     }
