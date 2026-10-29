@@ -1,9 +1,14 @@
 package edu.io.InvadeSpaces;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import java.util.List;
 
-@Controller 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController 
+@RequestMapping("/spaces")
 public class SpaceController {
     private final SpaceService spaceService;
 
@@ -11,8 +16,8 @@ public class SpaceController {
         this.spaceService = spaceService;
     }
     
-    @GetMapping("/findall")
-    public String getAll() {
-        return spaceService.findAll().toString();
+    @GetMapping("/")
+    public ResponseEntity<List<Space>> findAll() {
+        return ResponseEntity.ok(spaceService.findAll());
     }
 }
