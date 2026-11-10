@@ -1,5 +1,7 @@
 package edu.io.InvadeSpaces;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,9 +17,11 @@ public class Space {
     private Long id;
 
     @Column
+    @JsonProperty 
     private String name;
 
     @Column
+    @JsonProperty
     private int capacity;
 
     public String to_String() {

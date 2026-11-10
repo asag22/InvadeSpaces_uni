@@ -15,4 +15,8 @@ public class SpaceService {
     public List<Space> findAll() {
         return spacesReposityory.findAll();
     }
+
+    public add(Space space) {
+        spacesReposityory.save(space);
+    }
 }

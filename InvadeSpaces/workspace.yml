@@ -1,0 +1,12 @@
+opencollection: 1.0.0
+info:
+  name: "InvadeSpaces"
+  type: workspace
+
+collections:
+  - name: "spaces"
+    path: "collections/spaces"
+
+specs:
+
+docs: ''

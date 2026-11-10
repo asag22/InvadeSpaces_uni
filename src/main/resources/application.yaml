@@ -1,3 +1,15 @@
 spring:
   application:
     name: InvadeSpaces
+
+  datasource:
+    url: jdbc:h2:mem:invadespaces
+    driver-class-name: org.h2.Driver
+    user: user
+    password: pass
+
+  h2:
+    console:
+      enabled: true
+  jpa:
+    defer-datasource-initialization: true
