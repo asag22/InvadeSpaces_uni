@@ -5,8 +5,24 @@ info:
 
 http:
   method: GET
-  url: localhost:8080/spaces/
+  url: localhost:8080/spaces
   auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("response is 200", () => {
+            expect(res.getStatus()).to.equal(200)
+        })
+
+        test("response is in json", () => {
+            expect(res.getBody()).to.have.jsonBody()
+        })
+
+        test("response is an array", () => {
+            expect(res.getBody()).to.be.an("array")
+        })
 
 settings:
   encodeUrl: true

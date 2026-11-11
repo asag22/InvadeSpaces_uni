@@ -14,6 +14,7 @@ import jakarta.persistence.Table;
 public class Space {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty
     private Long id;
 
     @Column
@@ -26,5 +27,21 @@ public class Space {
 
     public String to_String() {
         return String.format("Space {id: %i, nazwa; \"%s\", capacity: %d}", id, name, capacity);
+    }
+
+    public String name() {
+        return this.name;
+    }
+
+    public int capacity() {
+        return this.capacity;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 }
