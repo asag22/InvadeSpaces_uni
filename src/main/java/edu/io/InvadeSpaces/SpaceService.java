@@ -48,4 +48,8 @@ public class SpaceService {
             return false;
         }
     }
+
+    public Optional<Space> findById(long id) {
+        return spacesReposityory.findById(id);
+    }
 }

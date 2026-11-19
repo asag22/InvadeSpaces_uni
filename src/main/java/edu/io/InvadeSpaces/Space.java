@@ -17,7 +17,7 @@ public class Space {
     @JsonProperty
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     @JsonProperty 
     private String name;
 

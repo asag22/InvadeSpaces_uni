@@ -5,8 +5,8 @@ spring:
   datasource:
     url: jdbc:h2:mem:invadespaces
     driver-class-name: org.h2.Driver
-    user: user
-    password: pass
+    user: username
+    password: password
 
   h2:
     console:

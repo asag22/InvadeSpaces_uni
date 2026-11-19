@@ -6,6 +6,8 @@ info:
 collections:
   - name: "spaces"
     path: "collections/spaces"
+  - name: "reservation"
+    path: "collections/reservation"
 
 specs:
 

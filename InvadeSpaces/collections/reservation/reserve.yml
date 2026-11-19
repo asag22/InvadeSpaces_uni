@@ -1,0 +1,23 @@
+info:
+  name: reserve
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: localhost:8080/reservations/reserve/1
+  body:
+    type: json
+    data: |-
+      {
+        "endTime": "2027-01-26T16:00:00",
+        "startTime": "2027-01-25T12:00:00"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
