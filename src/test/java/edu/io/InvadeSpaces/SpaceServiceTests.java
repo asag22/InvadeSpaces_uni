@@ -82,8 +82,8 @@ class SpaceServiceTests {
         Space result = spaceService.update(1L, newSpace);
 
         assertSame(existingSpace, result);
-        assertEquals("updated room", existingSpace.name());
-        assertEquals(42, existingSpace.capacity());
+        assertEquals("updated room", existingSpace.getName());
+        assertEquals(42, existingSpace.getCapacity());
         verify(spacesReposityory).findById(1L);
         verify(spacesReposityory).save(existingSpace);
         verifyNoMoreInteractions(spacesReposityory);

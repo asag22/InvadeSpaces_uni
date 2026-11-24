@@ -12,9 +12,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "reservations")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor 
+@EqualsAndHashCode
 public class Reservation {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,8 +43,4 @@ public class Reservation {
     @JoinColumn(name = "space_id", nullable = false)
     @JsonProperty
     private Space space;
-
-    public void setSpace(Space space) {
-        this.space = space;
-    }
 }

@@ -1,0 +1,23 @@
+info:
+  name: update reservation
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: localhost:8080/reservations/{{id}}
+  body:
+    type: json
+    data: |-
+      {
+        "endTime": "2028-01-26T16:00:00",
+        "startTime": "2028-01-25T12:00:00"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

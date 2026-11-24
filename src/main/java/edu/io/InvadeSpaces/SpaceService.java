@@ -31,8 +31,8 @@ public class SpaceService {
 
     public Space update(long id, Space newSpace) {
         return spacesReposityory.findById(id).map(space -> {
-            space.setName(newSpace.name());
-            space.setCapacity(newSpace.capacity());
+            space.setName(newSpace.getName());
+            space.setCapacity(newSpace.getCapacity());
             return spacesReposityory.save(space);
         }).orElseGet(() -> {
             return spacesReposityory.save(newSpace);

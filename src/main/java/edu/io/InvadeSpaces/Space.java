@@ -8,9 +8,19 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "spaces")
+@Getter
+@Setter 
+@NoArgsConstructor 
+@AllArgsConstructor 
+@EqualsAndHashCode
 public class Space {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,21 +37,5 @@ public class Space {
 
     public String to_String() {
         return String.format("Space {id: %i, nazwa; \"%s\", capacity: %d}", id, name, capacity);
-    }
-
-    public String name() {
-        return this.name;
-    }
-
-    public int capacity() {
-        return this.capacity;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
     }
 }
